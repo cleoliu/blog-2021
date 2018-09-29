@@ -12,7 +12,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: cleo Engineer Notes
+      title: Cleo Engineer Notes
 
 description: Stylish Jekyll Theme
 author:
@@ -22,7 +22,7 @@ author:
   twitter: 
   pinterest: 
   linkedin: cleo-l-770422130
-  bio: Your stylish, minimalist theme!
+  bio: Writing and Learning!
   email_md5: 7099d712141fe934902e4ba95387772b.jpg
 
 rss_path: feed.xml
