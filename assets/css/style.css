@@ -9,8 +9,8 @@ body{
 	top: 0px;
 	padding-top: 10%;
 	background-image: url('https://raw.githubusercontent.com/cleoliu/cleoliu.github.io/master/assets/img/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-color: #0a5266;
 	color: #fff;
 }
@@ -85,7 +85,7 @@ article .share .gplus:hover {
 }
 
 .page-header {
-	color: #e74c3c;
+	color: #135bae;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
 
@@ -105,9 +105,9 @@ article{
 }
 
 .post-date {
-	text-transform: uppercase;
-	font-size: 14px;
-	letter-spacing: 3px;
+	text-transform: capitalize;
+	font-size: 13px;
+	letter-spacing: 2px;
 }
 
 article {
