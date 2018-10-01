@@ -6,6 +6,7 @@ markdown: kramdown
 disqus: cleo
 google_analytics: cleo
 title: cleo
+sidebar_background_image: bg.jpg
 
 defaults:
   -

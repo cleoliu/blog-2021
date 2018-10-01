@@ -2,13 +2,13 @@
 
 body{
 	color: #2c3e50;
+	font-family: Microsoft JhengHei;
 }
 
 .sidebar {
 	position: fixed;
 	top: 0px;
 	padding-top: 10%;
-	background-image: url('https://raw.githubusercontent.com/cleoliu/cleoliu.github.io/master/assets/img/bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #0a5266;
@@ -85,7 +85,7 @@ article .share .gplus:hover {
 }
 
 .page-header {
-	color: #f2756a;
+	color: #135bae;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
 
