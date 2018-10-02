@@ -26,8 +26,10 @@ author:
   email_md5: pexels-photo-1449638.jpeg
 
 rss_path: feed.xml
+history_path: history.html
 categories_path: categories.html
 tags_path: tags.html
+aboutme_path: aboutme.html
 
 BASE_PATH:
 

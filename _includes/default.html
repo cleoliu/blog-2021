@@ -21,7 +21,7 @@
 	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
-
+	<link rel="shortcut icon" href="/assets/ico/favicon.png">
 	<!-- Le fav and touch icons -->
 	<!-- Update these with your own images
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -59,7 +59,7 @@
 			</a>
 			{% endif %}
 			<a class="navbar-brand" href="{{ site.BASE_PATH }}/">
-				<img src="https://raw.githubusercontent.com/cleoliu/cleoliu.github.io/master/assets/img/{{site.author.email_md5}}" width="150" height="150" class="img-circle" />
+				<img src="/assets/img/{{site.author.email_md5}}" width="150" height="150" class="img-circle" />
 				{{ site.title }}
 			</a>
 		</div>
@@ -81,6 +81,7 @@
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="{{ site.BASE_PATH}}/{{ site.history_path }}"><i class="fa fa-clock-o"></i>History</a></li>
 			<li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-folder"></i>Categories</a></li>
 			<li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>Tags</a></li>
 			<li class="divider"></li>
