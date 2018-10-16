@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Route Controller
+title: [MVC教學] Route Controller
 categories: [ASP•NET, C＃]
 tags: [實做]
 description: 像是郵差依據包裹上的地址，透過地圖找到目的地然後投遞。...
@@ -111,7 +111,7 @@ namespace mymoney.Controllers
 
 - 舉個栗子：
 ```
-  Route Url : 　{controller}/{action}/{id}  
+  Route Url : 　/{controller}/{action}/{id}  
   Index頁：　　　/RouteTest/Index
   代個id： 　　　/RouteTest/Index2/cleo
   代個?id：　　　/RouteTest/Index2/?id=cleo
