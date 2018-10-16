@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [MVC教學] Route Controller
+title: "[MVC教學] Route Controller"
 categories: [ASP•NET, C＃]
 tags: [實做]
 description: 像是郵差依據包裹上的地址，透過地圖找到目的地然後投遞。...
