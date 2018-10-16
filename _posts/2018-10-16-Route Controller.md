@@ -11,6 +11,8 @@ description: 像是郵差依據包裹上的地址，透過地圖找到目的地�
 - 像是郵差依據包裹上的地址，透過地圖找到目的地然後投遞。
 - 而對應到程式中 [網址] 就是你包裹要送達的目的地址，Route 就是 [地圖]，而網址的 [參數] 就是你要投遞的包裹。
 
+<br/><br/>
+
 ***
 
 ## 不須變數的Route
@@ -18,11 +20,14 @@ description: 像是郵差依據包裹上的地址，透過地圖找到目的地�
 ```
     http://localhost/Home/Index
 ```
+
 <br/><br/>
+
 1. 執行後在首頁點擊 [關於] 
 2. 關於頁的網址為 /Home/About
 3. 再點擊一次網頁的 [關於] 按鈕
 4. 顯示 "Your application description page."
+
 <br/><br/>
 
 ### HomeController
@@ -45,26 +50,35 @@ C:\Users\USER\Documents\GIT\Keep_accounts\mymoney\mymoney\App_Start\RouteConfig.
     首頁網址︰   /                          #啥都沒有 --->參考Default=/Home/Index 
 ```
 
+<br/><br/>
+
 ***
+
 ## 建個新 Controller 在繼續
 - 在 Controller 資料夾按下滑鼠右鍵 -> 加入 -> 控制器
 - 輸入 [RouteTestController] 後按下 [加入]
 - 選擇 [MVC 5 控制器 - 空白] 後按下 [新增]
 
+<br/><br/>
+
 ***
 
 ## 單變數與多變數的Route
+
 ### 單變數
 - 單純的 CRUD（Create、Read、Update、Delete）操作，基本上只需要 index 就已足夠
 ```
     http://localhost/Home/Index/1
 ```
+
 ### 多變數
 - 比較複雜的操作，例如搜尋分頁功能時，需要同時傳送 第幾頁 與 搜尋條件 ，如此就需要同時傳送多個變數至 Action
 ```
     http://localhost/Home/Index/?id=1&page=3
 ```
+
 <br/><br/>
+
 ### RouteTestController
 
 C:\Users\USER\Documents\GIT\Keep_accounts\mymoney\mymoney\Controllers\RouteTestController.cs
@@ -94,6 +108,7 @@ namespace mymoney.Controllers
   }
 }
 ```
+
 - 舉個栗子：
 ```
   Route Url : 　{controller}/{action}/{id}  
@@ -106,10 +121,11 @@ namespace mymoney.Controllers
 
 
 <br/><br/>
+
 ***
 ### 參考文獻
-https://progressbar.tw/posts/105
-https://ithelp.ithome.com.tw/articles/10158071
+- https://progressbar.tw/posts/105
+- https://ithelp.ithome.com.tw/articles/10158071
 
 
 
