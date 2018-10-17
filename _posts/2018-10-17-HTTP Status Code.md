@@ -111,7 +111,8 @@ description: 就是使用者（Client 端）發送一個 Request（請求），�
     那在網路上兩點間的傳輸會有所謂的 timeout，這個是避免單一個點會傻傻的等待，所以當時間一到他就必須做個決定回傳結果從server 到網路設備上的關卡只要有一關遇到問題就會出現 502 
     (502內容包含504) [1](https://notfalse.net/50/http-intermediary) 匝道
 
-    ![](https://s3.amazonaws.com/notejoy/note_images/99942.1.Image%202018-08-24%20at%20%E4%B8%8A%E5%8D%8811.46.22.png)
+    <img src="https://s3.amazonaws.com/notejoy/note_images/99942.1.Image%202018-08-24%20at%20%E4%B8%8A%E5%8D%8811.46.22.png" width="60%" height="30%" />
+    
 
 - **503 Service Unavailable**
     由於**臨時的伺服器維護**或者過載，伺服器當前無法處理請求。這個狀況是暫時的，並且將在一段時間以後恢復。
@@ -122,7 +123,8 @@ description: 就是使用者（Client 端）發送一個 Request（請求），�
     作為閘道器或者代理工作的伺服器嘗試執行請求時，未能及時從上游伺服器（URI標識出的伺服器，例如HTTP、FTP、LDAP）或者輔助伺服器（例如DNS）收到回應。
     網路設備的延遲會讓client和server雙方的有效時間對不起來，避免server或client收到內容時都已經過了很久，網路設備延遲到了一定程度就會送這個訊息。 
 
-    ![](https://s3.amazonaws.com/notejoy/note_images/99942.1.Image%202018-08-24%20at%20%E4%B8%8A%E5%8D%8811.11.23.png)
+    <img src="https://s3.amazonaws.com/notejoy/note_images/99942.1.Image%202018-08-24%20at%20%E4%B8%8A%E5%8D%8811.11.23.png" width="70%" height="30%" />
+    
 
 ​<br/><br/>
 
