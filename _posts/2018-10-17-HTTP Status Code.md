@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Network] HTTP Status Code"
-categories: [Http]
+categories: [Network, HTTP]
 tags: [觀念]
 description: 就是使用者（Client 端）發送一個 Request（請求），接著伺服器（Server 端）處理請求，並回傳一個 Response（回應）...
 ---
@@ -113,6 +113,7 @@ description: 就是使用者（Client 端）發送一個 Request（請求），�
 
     <img src="https://s3.amazonaws.com/notejoy/note_images/99942.1.Image%202018-08-24%20at%20%E4%B8%8A%E5%8D%8811.46.22.png" width="60%" height="30%" />
     
+    <img src="https://s3.amazonaws.com/notejoy/note_images/99942.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2010-37-44.jpg" width="60%" height="30%" />
 
 - **503 Service Unavailable**
     由於**臨時的伺服器維護**或者過載，伺服器當前無法處理請求。這個狀況是暫時的，並且將在一段時間以後恢復。
