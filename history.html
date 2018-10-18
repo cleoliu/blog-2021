@@ -5,17 +5,12 @@ title: History
 
 <section id="archive">
     {%for post in site.posts %}
-        <li>
-          <div class="post-tag" style="background:#ccc">
+        <li style="line-height: 25px;">
+          <div class="badge" style="background:#ccc">
               {{ post.date | date: "%m-%d" }}
           </div>
           <a href="{{ site.baseurl }}{{ post.url }}">
               {{ post.title }}
-            <span class="entry-date">
-              <time datetime="{{ post.date | date_to_xmlschema }}">
-              </time>
-            </span>
-          </a>
         </li>
     {% endfor %}
     </ul>
