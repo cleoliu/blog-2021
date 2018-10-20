@@ -9,7 +9,7 @@ group: navigation
 {% assign tag_words = site_tags | split:',' | sort %}
 
 
-<div class="col-sm-3 col-xs-6">
+<div class="col-sm-3" style="padding-bottom: 9px; margin: 20px; border-bottom: 1px solid #eee;">
     <ul class="nav nav-tabs-vertical cat-tag-menu">
     {% for item in (0..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
@@ -22,7 +22,7 @@ group: navigation
    </ul>
 </div>
 <!-- Tab panes -->
-<div class="tab-content col-sm-9 col-xs-6">
+<div class="tab-content col-sm-9">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <div class="tab-pane" id="{{ this_word | replace:' ','-' }}-ref">
