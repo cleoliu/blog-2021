@@ -22,7 +22,7 @@ group: navigation
    </ul>
 </div>
 <!-- Tab panes -->
-<div class="tab-content col-sm-9">
+<div class="tab-content col-sm-8 col-sm-6">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
     <div class="tab-pane" id="{{ this_word | replace:' ','-' }}-ref">

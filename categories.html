@@ -29,7 +29,7 @@ group: navigation
     </ul>
 </div>
 <!-- Tab panes -->
-<div class="tab-content col-sm-9">
+<div class="tab-content col-sm-8 col-sm-6">
   {% for category in site.categories %}
     <div class="tab-pane" id="{{ category[0] | replace:' ','-' }}-ref">
       <h2 style="margin-top: 0px">Posts in {{ category[0] | capitalize }}</h2>
