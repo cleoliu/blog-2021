@@ -61,8 +61,11 @@
 			{% endif %}
 			<a class="navbar-brand" href="{{ site.BASE_PATH }}/">
 				<img src="/assets/img/{{site.author.email_md5}}" width="150" height="150" class="img-circle" />
-					<a href="/{{ site.aboutme_path }}" style="color: white; text-transform: uppercase;">{{ site.title }}</a>
 			</a>
+			<a class="navbar-brand" href="//{{ site.aboutme_path }}" style="color: white;text-transform: uppercase;">
+				{{ page.title }}
+			</a>
+
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
