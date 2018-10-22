@@ -7,174 +7,6 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>[資料庫] 03. 資料庫設計</title>
-				<description>&lt;h2 id=&quot;一些名詞&quot;&gt;一些名詞&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;欄位 &lt;strong&gt;空值&lt;/strong&gt; 表示：
-    &lt;ul&gt;
-      &lt;li&gt;不適用（如女學生無兵役）。&lt;/li&gt;
-      &lt;li&gt;未知（如學校資料中沒有學生的手機）。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;view&lt;/strong&gt;：來自Table，可能合併多個Table。&lt;/li&gt;
-  &lt;li&gt;關連模行中：
-    &lt;ul&gt;
-      &lt;li&gt;Table：也稱關連、實體（Entity）。&lt;/li&gt;
-      &lt;li&gt;縱：欄位（Field）、屬性（Attribute）。&lt;/li&gt;
-      &lt;li&gt;橫：紀錄、值組（Tuple）。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;關連式資料庫設計&quot;&gt;關連式資料庫設計&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;鍵值完整性限制（key Integrity Constraint）：Key 不可為 Null Value。&lt;/li&gt;
-  &lt;li&gt;領域完整性限制（Domain Integrity Constraint）：屬性值規範。（如｛男, 女｝）&lt;/li&gt;
-  &lt;li&gt;實體完整性限制（Entity Integrity Constraint）：Key 不可重複。&lt;/li&gt;
-  &lt;li&gt;參考完整性限制：
-    &lt;ul&gt;
-      &lt;li&gt;被參考：父關聯，&lt;strong&gt;主鍵 Primary Key&lt;/strong&gt;。&lt;/li&gt;
-      &lt;li&gt;參考父關聯：&lt;strong&gt;子關連，Foreign Key&lt;/strong&gt;。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;正規化&quot;&gt;正規化&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;正規化（Normalization）是關聯式資料庫在設計資料表時，用來消除資料儲存異常的處理方法。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;不允許多重值屬性。&lt;/li&gt;
-  &lt;li&gt;去除部分相依性。&lt;/li&gt;
-  &lt;li&gt;去除間接相依性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-第一階正規化-first-normal-form-1nf&quot;&gt;1. 第一階正規化 (First Normal Form, 1NF)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一格(每一列每一欄)只能有一筆資料。&lt;/li&gt;
-  &lt;li&gt;每筆資料都有一個唯一的主鍵作為識別。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-43.jpg&quot; alt=&quot;&quot; /&gt;
-​&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;將紀錄拆開&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-54.jpg&quot; alt=&quot;&quot; /&gt;
-​&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;上表有兩個＂王小明＂，必須加上主鍵來做識別。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-10-09.jpg&quot; alt=&quot;&quot; /&gt;
-​
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;2-第二階正規化-second-normal-form-2nf&quot;&gt;2. 第二階正規化 (Second Normal Form, 2NF)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;符合1NF。&lt;/li&gt;
-  &lt;li&gt;所有非主鍵欄位都和主鍵欄位具有相依性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-41-55.jpg&quot; alt=&quot;&quot; /&gt;
-​&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;在一張交易單中，主鍵 &lt;strong&gt;交易Id&lt;/strong&gt;，跟&lt;strong&gt;(交易)日期&lt;/strong&gt;、&lt;strong&gt;(交易)商品&lt;/strong&gt;，都很明確有意義上的關聯，但加上去的 &lt;strong&gt;客人Id&lt;/strong&gt;，跟這些欄位就不能說有直接的關聯了。為了符合2NF的規範，將帳本拆成了2張表。
-​
- &lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-42-25.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;這邊交易表中的 &lt;strong&gt;客人Id&lt;/strong&gt; 已經變成外鍵了。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-第三階正規化-third-normal-form-3nf&quot;&gt;3. 第三階正規化 (Third Normal Form, 3NF)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;符合 1NF 及 2NF。&lt;/li&gt;
-  &lt;li&gt;非主鍵欄位彼此都具有相依性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;如 &lt;strong&gt;商品明細&lt;/strong&gt; 和 &lt;strong&gt;付款方式&lt;/strong&gt;，是無法互相決定對方內容的，也就是互不相依的，阿嬤發現這樣並不符合 3NF 規範，決定再怒拆。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-15-13.jpg&quot; alt=&quot;&quot; /&gt;
-​&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;拆完之後發現交易表剩下一堆外鍵。&lt;/p&gt;
-
-    &lt;p&gt;​&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-16-02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;還有其他正規化方式，以下不常用，稍微了解即可：
-    &lt;ul&gt;
-      &lt;li&gt;BC正規化 (Boyce–Codd Normal Form, BCNF)&lt;/li&gt;
-      &lt;li&gt;第四階正規化 (Fourth Normal Form, 4NF)&lt;/li&gt;
-      &lt;li&gt;第五階正規化 (Fifth Normal Form, 5NF)&lt;/li&gt;
-      &lt;li&gt;第六階正規化 (Sixth Normal Form, 6NF)&lt;/li&gt;
-      &lt;li&gt;DK正規化 (Domain/Key Normal Form, DKNF)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;資料庫設計&quot;&gt;資料庫設計&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;由大而小：實體＞屬性＞實體間關連&lt;/li&gt;
-  &lt;li&gt;由小而大：屬性收集＞分類成不同實體＞實體間關連＞資料流程圖&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;ref&quot;&gt;ref：&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://soon.logdown.com/posts/685164-sql-normalization&quot;&gt;資料庫正規化&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Mon, 22 Oct 2018 00:00:00 +0800</pubDate>
-				<link>/%E8%B3%87%E6%96%99%E5%BA%AB/2018/10/22/%E8%B3%87%E6%96%99%E5%BA%AB-03.-%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88.html</link>
-				<guid isPermaLink="true">/%E8%B3%87%E6%96%99%E5%BA%AB/2018/10/22/%E8%B3%87%E6%96%99%E5%BA%AB-03.-%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88.html</guid>
-			</item>
-		
-			<item>
 				<title>[Network] 06. HTTP 服務</title>
 				<description>&lt;h2 id=&quot;創建http服務&quot;&gt;創建HTTP服務&lt;/h2&gt;
 
@@ -371,6 +203,174 @@
 				<pubDate>Mon, 22 Oct 2018 00:00:00 +0800</pubDate>
 				<link>/network/2018/10/22/Network-06.-HTTP-%E6%9C%8D%E5%8B%99.html</link>
 				<guid isPermaLink="true">/network/2018/10/22/Network-06.-HTTP-%E6%9C%8D%E5%8B%99.html</guid>
+			</item>
+		
+			<item>
+				<title>[資料庫] 03. 資料庫設計</title>
+				<description>&lt;h2 id=&quot;一些名詞&quot;&gt;一些名詞&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;欄位 &lt;strong&gt;空值&lt;/strong&gt; 表示：
+    &lt;ul&gt;
+      &lt;li&gt;不適用（如女學生無兵役）。&lt;/li&gt;
+      &lt;li&gt;未知（如學校資料中沒有學生的手機）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;view&lt;/strong&gt;：來自Table，可能合併多個Table。&lt;/li&gt;
+  &lt;li&gt;關連模行中：
+    &lt;ul&gt;
+      &lt;li&gt;Table：也稱關連、實體（Entity）。&lt;/li&gt;
+      &lt;li&gt;縱：欄位（Field）、屬性（Attribute）。&lt;/li&gt;
+      &lt;li&gt;橫：紀錄、值組（Tuple）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;關連式資料庫設計&quot;&gt;關連式資料庫設計&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;鍵值完整性限制（key Integrity Constraint）：Key 不可為 Null Value。&lt;/li&gt;
+  &lt;li&gt;領域完整性限制（Domain Integrity Constraint）：屬性值規範。（如｛男, 女｝）&lt;/li&gt;
+  &lt;li&gt;實體完整性限制（Entity Integrity Constraint）：Key 不可重複。&lt;/li&gt;
+  &lt;li&gt;參考完整性限制：
+    &lt;ul&gt;
+      &lt;li&gt;被參考：父關聯，&lt;strong&gt;主鍵 Primary Key&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;參考父關聯：&lt;strong&gt;子關連，Foreign Key&lt;/strong&gt;。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;正規化&quot;&gt;正規化&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;正規化（Normalization）是關聯式資料庫在設計資料表時，用來消除資料儲存異常的處理方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不允許多重值屬性。&lt;/li&gt;
+  &lt;li&gt;去除部分相依性。&lt;/li&gt;
+  &lt;li&gt;去除間接相依性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-第一階正規化-first-normal-form-1nf&quot;&gt;1. 第一階正規化 (First Normal Form, 1NF)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一格(每一列每一欄)只能有一筆資料。&lt;/li&gt;
+  &lt;li&gt;每筆資料都有一個唯一的主鍵作為識別。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-43.jpg&quot; alt=&quot;&quot; /&gt;
+​&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;將紀錄拆開&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-54.jpg&quot; alt=&quot;&quot; /&gt;
+​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上表有兩個＂王小明＂，必須加上主鍵來做識別。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-10-09.jpg&quot; alt=&quot;&quot; /&gt;
+​
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;2-第二階正規化-second-normal-form-2nf&quot;&gt;2. 第二階正規化 (Second Normal Form, 2NF)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;符合1NF。&lt;/li&gt;
+  &lt;li&gt;所有非主鍵欄位都和主鍵欄位具有相依性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-41-55.jpg&quot; alt=&quot;&quot; /&gt;
+​&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;在一張交易單中，主鍵 &lt;strong&gt;交易Id&lt;/strong&gt;，跟&lt;strong&gt;(交易)日期&lt;/strong&gt;、&lt;strong&gt;(交易)商品&lt;/strong&gt;，都很明確有意義上的關聯，但加上去的 &lt;strong&gt;客人Id&lt;/strong&gt;，跟這些欄位就不能說有直接的關聯了。為了符合2NF的規範，將帳本拆成了2張表。
+​
+ &lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-42-25.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;這邊交易表中的 &lt;strong&gt;客人Id&lt;/strong&gt; 已經變成外鍵了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-第三階正規化-third-normal-form-3nf&quot;&gt;3. 第三階正規化 (Third Normal Form, 3NF)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;符合 1NF 及 2NF。&lt;/li&gt;
+  &lt;li&gt;非主鍵欄位彼此都具有相依性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;如 &lt;strong&gt;商品明細&lt;/strong&gt; 和 &lt;strong&gt;付款方式&lt;/strong&gt;，是無法互相決定對方內容的，也就是互不相依的，阿嬤發現這樣並不符合 3NF 規範，決定再怒拆。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-15-13.jpg&quot; alt=&quot;&quot; /&gt;
+​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;拆完之後發現交易表剩下一堆外鍵。&lt;/p&gt;
+
+    &lt;p&gt;​&lt;img src=&quot;https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-16-02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;還有其他正規化方式，以下不常用，稍微了解即可：
+    &lt;ul&gt;
+      &lt;li&gt;BC正規化 (Boyce–Codd Normal Form, BCNF)&lt;/li&gt;
+      &lt;li&gt;第四階正規化 (Fourth Normal Form, 4NF)&lt;/li&gt;
+      &lt;li&gt;第五階正規化 (Fifth Normal Form, 5NF)&lt;/li&gt;
+      &lt;li&gt;第六階正規化 (Sixth Normal Form, 6NF)&lt;/li&gt;
+      &lt;li&gt;DK正規化 (Domain/Key Normal Form, DKNF)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;資料庫設計&quot;&gt;資料庫設計&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由大而小：實體＞屬性＞實體間關連&lt;/li&gt;
+  &lt;li&gt;由小而大：屬性收集＞分類成不同實體＞實體間關連＞資料流程圖&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;ref&quot;&gt;ref：&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://soon.logdown.com/posts/685164-sql-normalization&quot;&gt;資料庫正規化&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sun, 21 Oct 2018 00:00:00 +0800</pubDate>
+				<link>/%E8%B3%87%E6%96%99%E5%BA%AB/2018/10/21/%E8%B3%87%E6%96%99%E5%BA%AB-03.-%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88.html</link>
+				<guid isPermaLink="true">/%E8%B3%87%E6%96%99%E5%BA%AB/2018/10/21/%E8%B3%87%E6%96%99%E5%BA%AB-03.-%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88.html</guid>
 			</item>
 		
 			<item>
