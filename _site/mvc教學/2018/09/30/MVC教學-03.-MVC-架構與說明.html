@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>[資料庫] 03. 資料庫設計</title>
+	<title>[MVC教學] 03. MVC 架構與說明</title>
 	
-	<meta name="description" content="資料表規劃，提出所需要的資料...">
+	<meta name="description" content="Model-View-Controller（MVC）是一種設計模式（design pattern），主要目的是用來簡化應用程式的開發與增強程式的可維護性...">
 	
 	<meta name="author" content="Cleo">
 
@@ -59,7 +59,7 @@
 				<img src="/assets/img/pexels-photo-1449638.jpeg" width="150" height="150" class="img-circle" />
 			</a>
 			<a class="navbar-brand" href="//aboutme.html" style="color: white;text-transform: uppercase;">
-				[資料庫] 03. 資料庫設計
+				[MVC教學] 03. MVC 架構與說明
 			</a>
 
 		</div>
@@ -147,7 +147,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>[資料庫] 03. 資料庫設計 </h1>
+  <h1>[MVC教學] 03. MVC 架構與說明 </h1>
 </div>
 	
 <article>
@@ -155,175 +155,119 @@
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   October 
-	   21st,
-	     
+	   September 
+	   30th,
+	   
 		 2018
 		 <span id="busuanzi_container_page_pv" style="display: inline;">
 				| Viewd <span id="busuanzi_value_page_pv">10</span> times.
 			</span>
 	 </span>
 	  <div class="article_body">
-	  <h2 id="一些名詞">一些名詞</h2>
-<ul>
-  <li>欄位 <strong>空值</strong> 表示：
-    <ul>
-      <li>不適用（如女學生無兵役）。</li>
-      <li>未知（如學校資料中沒有學生的手機）。</li>
-    </ul>
-  </li>
-  <li><strong>view</strong>：來自Table，可能合併多個Table。</li>
-  <li>關連模行中：
-    <ul>
-      <li>Table：也稱關連、實體（Entity）。</li>
-      <li>縱：欄位（Field）、屬性（Attribute）。</li>
-      <li>橫：紀錄、值組（Tuple）。</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /><br /></p>
-
-<hr />
-
-<h2 id="關連式資料庫設計">關連式資料庫設計</h2>
-<ol>
-  <li>鍵值完整性限制（key Integrity Constraint）：Key 不可為 Null Value。</li>
-  <li>領域完整性限制（Domain Integrity Constraint）：屬性值規範。（如｛男, 女｝）</li>
-  <li>實體完整性限制（Entity Integrity Constraint）：Key 不可重複。</li>
-  <li>參考完整性限制：
-    <ul>
-      <li>被參考：父關聯，<strong>主鍵 Primary Key</strong>。</li>
-      <li>參考父關聯：<strong>子關連，Foreign Key</strong>。</li>
-    </ul>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<hr />
-
-<h2 id="正規化">正規化</h2>
-
+	  <h2 id="簡介">簡介</h2>
 <blockquote>
-  <p>正規化（Normalization）是關聯式資料庫在設計資料表時，用來消除資料儲存異常的處理方法。</p>
+  <p>Model-View-Controller（MVC）是一種設計模式（design pattern），主要目的是用來簡化應用程式的開發與增強程式的可維護性。</p>
 </blockquote>
 
+<p>像 <a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93">資料庫</a> 查詢語句（SQL query）這樣的資料層程式碼和像 <a href="https://zh.wikipedia.org/wiki/HTML">HTML</a> 這樣的表示層程式碼是混在一起，MVC 可以從根本上強制性地將它們分開。</p>
+
+<h3 id="優點">優點</h3>
 <ul>
-  <li>不允許多重值屬性。</li>
-  <li>去除部分相依性。</li>
-  <li>去除間接相依性。</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h3 id="1-第一階正規化-first-normal-form-1nf">1. 第一階正規化 (First Normal Form, 1NF)</h3>
-
-<ul>
-  <li>一格(每一列每一欄)只能有一筆資料。</li>
-  <li>每筆資料都有一個唯一的主鍵作為識別。</li>
-</ul>
-
-<p>如：</p>
-
-<p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-43.jpg" alt="" />
-​</p>
-<ol>
-  <li>
-    <p>將紀錄拆開</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-54.jpg" alt="" />
-​</p>
-  </li>
-  <li>
-    <p>上表有兩個＂王小明＂，必須加上主鍵來做識別。</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-10-09.jpg" alt="" />
-​
-<br /><br /></p>
-  </li>
-</ol>
-
-<h3 id="2-第二階正規化-second-normal-form-2nf">2. 第二階正規化 (Second Normal Form, 2NF)</h3>
-
-<ul>
-  <li>符合1NF。</li>
-  <li>所有非主鍵欄位都和主鍵欄位具有相依性。</li>
-</ul>
-
-<p>如：</p>
-
-<p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-41-55.jpg" alt="" />
-​</p>
-<ol>
-  <li>
-    <p>在一張交易單中，主鍵 <strong>交易Id</strong>，跟<strong>(交易)日期</strong>、<strong>(交易)商品</strong>，都很明確有意義上的關聯，但加上去的 <strong>客人Id</strong>，跟這些欄位就不能說有直接的關聯了。為了符合2NF的規範，將帳本拆成了2張表。
-​
- <img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-42-25.jpg" alt="" /></p>
-  </li>
-  <li>
-    <p>這邊交易表中的 <strong>客人Id</strong> 已經變成外鍵了。</p>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<h3 id="3-第三階正規化-third-normal-form-3nf">3. 第三階正規化 (Third Normal Form, 3NF)</h3>
-
-<ul>
-  <li>符合 1NF 及 2NF。</li>
-  <li>非主鍵欄位彼此都具有相依性。</li>
-</ul>
-
-<p>如：</p>
-
-<ol>
-  <li>
-    <p>如 <strong>商品明細</strong> 和 <strong>付款方式</strong>，是無法互相決定對方內容的，也就是互不相依的，阿嬤發現這樣並不符合 3NF 規範，決定再怒拆。</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-15-13.jpg" alt="" />
-​</p>
-  </li>
-  <li>
-    <p>拆完之後發現交易表剩下一堆外鍵。</p>
-
-    <p>​<img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-16-02.jpg" alt="" /></p>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<ul>
-  <li>還有其他正規化方式，以下不常用，稍微了解即可：
+  <li>程式碼簡潔，更加直覺。</li>
+  <li>程式升級的彈性。</li>
+  <li>檔案分類明確，程式方便管理。</li>
+  <li>增加程式可用性，物件導向減少重複。</li>
+  <li>重新組裝做測試較方便，或是利用原有物件再加上其他實作成新功能。</li>
+  <li>關注點分離，有例於團隊開發，職務區別化分負責區域明確。
     <ul>
-      <li>BC正規化 (Boyce–Codd Normal Form, BCNF)</li>
-      <li>第四階正規化 (Fourth Normal Form, 4NF)</li>
-      <li>第五階正規化 (Fifth Normal Form, 5NF)</li>
-      <li>第六階正規化 (Sixth Normal Form, 6NF)</li>
-      <li>DK正規化 (Domain/Key Normal Form, DKNF)</li>
+      <li>Development：負責 Model 區塊。</li>
+      <li>Design View：負責 View 區塊。</li>
+      <li>Integration Controller：負責 Controller 區塊。</li>
     </ul>
   </li>
 </ul>
 
-<p><br /><br /></p>
-
-<hr />
-
-<h2 id="資料庫設計">資料庫設計</h2>
-
+<h3 id="缺點">缺點</h3>
 <ul>
-  <li>由大而小：實體＞屬性＞實體間關連</li>
-  <li>由小而大：屬性收集＞分類成不同實體＞實體間關連＞資料流程圖</li>
+  <li>沒有明確的定義，所以完全理解 MVC 並不是很容易。</li>
+  <li>不適用於小型專案。</li>
+  <li>管理文件增加。</li>
 </ul>
 
 <p><br /><br /></p>
 
 <hr />
 
-<h2 id="ref">ref：</h2>
+<h2 id="檔案架構">檔案架構</h2>
+<blockquote>
+  <p>Visual Studio 新增專案：新增專案 ＞ Visaul C# ＞ ASP.NET Web 應用程式 ＞ 輸入名稱Carts ＞ 點選確定 ＞ 範本[MVC]</p>
+</blockquote>
+
+<p><img src="https://s3.amazonaws.com/notejoy/note_images/131288.1.%E6%93%B7%E5%8F%96.PNG" alt="" /></p>
+
+<p><br /><br /></p>
+
+<hr />
+
+<h2 id="mvc-邏輯元件">MVC 邏輯元件</h2>
+<p><img src="https://progressbar.tw/uploads/ckeditor/pictures/1074/content_DotNetMVC.jpg" alt="" /></p>
+
+<h3 id="1-模型model">1. 模型（Model）</h3>
 <ul>
-  <li><a href="http://soon.logdown.com/posts/685164-sql-normalization">資料庫正規化</a></li>
+  <li>用於封裝與應用程式中的商業邏及邏輯。
+    <ul>
+      <li>建構應用程式運作細節。</li>
+      <li>應用程式功能的演算法。</li>
+      <li>提供 APIs。</li>
+      <li>資料庫的存取，資訊架構。（如 ADO.NET、Entity Framework、LINQ to SQL 等與資料相關的元件 ）</li>
+      <li>與 view 的資料交換。（用於監視此 Model 的 View 必須事先在此 Model 上註冊）</li>
+      <li>伺服端程式語言。</li>
+      <li>資料驗證。</li>
+    </ul>
+  </li>
+  <li>包含所有的邏輯、物件，內容豐富。</li>
 </ul>
+
+<h3 id="2-視圖view">2. 視圖（View）</h3>
+<ul>
+  <li>前端呈現，故盡量單純的呈現即可。</li>
+  <li>圖像製作，HTML，CSS 以及 Javascript。</li>
+</ul>
+
+<h3 id="3-控制器controller">3. 控制器（Controller）</h3>
+<ul>
+  <li>依據傳入的資料該怎麼運作、程式流程的控制、該回傳給使用者什麼資料等。</li>
+  <li>用於控制應用程式的流程。
+    <ul>
+      <li>將 view 發出的靜態頁面轉換成嵌有程式的動態頁面。</li>
+      <li>將資料利用表單發送到 Model Layer，接收並轉換 Model Layer 所回傳的資料（負責從 Model 取得資料）並呈現在 View Layer 之上。（決定顯示那個 View）</li>
+    </ul>
+  </li>
+  <li>盡量輕量，這裡盡量不撰寫邏輯與物件，而以路由以傳遞資料為主。</li>
+</ul>
+
+<p><br /><br /></p>
+
+<hr />
+
+<h2 id="網頁系統流程">網頁系統流程</h2>
+<ol>
+  <li>使用者在網頁（View）表單（請求）送出後。</li>
+  <li>透過 Controller 接收後，決定給哪個 model 進行處理。</li>
+  <li>所有需求完成後，Controller 再回傳相對的結果，讓網頁（View）呈現相關資訊。
+<img src="https://2.bp.blogspot.com/-YUWtsOlOtQY/Vz58E8CMBOI/AAAAAAAAbiQ/eXGYjaWnA9kDZZ0ESTeMiuJy2a__ZVdwQCLcB/s640/001.png" alt="" /></li>
+</ol>
+
+<p><br /><br /></p>
+
+<hr />
+<h2 id="參考資料">參考資料</h2>
+<ol>
+  <li>WIKI <a href="https://zh.wikipedia.org/wiki/MVC">1</a></li>
+  <li>什麼是MVC？<a href="https://ithelp.ithome.com.tw/articles/10191216">1</a></li>
+  <li>什麼是MVC架構 <a href="https://progressbar.tw/posts/95">1</a></li>
+  <li>MVC 架構與說明 <a href="https://dotblogs.com.tw/dog0416/2016/05/20/131644">1</a></li>
+</ol>
 
 	  </div>
 
@@ -333,8 +277,8 @@
 		  
 		  
 			 
-				<li><a href="/categories.html#資料庫-ref">
-					資料庫 <span>(3)</span>
+				<li><a href="/categories.html#MVC教學-ref">
+					MVC教學 <span>(5)</span>
 					
 				</a></li>
 			
@@ -356,8 +300,15 @@
 				</li>
 			 
 				<li>
-					<a href="/tags.html#資料庫-ref">
-					資料庫 <span>(3)</span>
+					<a href="/tags.html#ASP•NET-ref">
+					ASP•NET <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#C＃-ref">
+					C＃ <span>(5)</span>
 					
 					</a>
 				</li>
@@ -395,10 +346,10 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/network/2018/10/21/Network-05.-Cache-&-Redis.html" title="[Network] 05. Cache & Redis">&larr; Previous</a></li>
+		  <li class="previous"><a href="/mvc%E6%95%99%E5%AD%B8/2018/09/29/MVC%E6%95%99%E5%AD%B8-02.-Adout-.Net-Framework.html" title="[MVC教學] 02. Adout .Net Framework">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/network/2018/10/22/Network-06.-HTTP-%E6%9C%8D%E5%8B%99.html" title="[Network] 06. HTTP 服務">Next &rarr;</a></li>
+		  <li class="next"><a href="/mvc%E6%95%99%E5%AD%B8/2018/10/16/MVC%E6%95%99%E5%AD%B8-04.-Route-Controller.html" title="[MVC教學] 04. Route Controller">Next &rarr;</a></li>
 		  
 		</ul>
 

@@ -8,6 +8,15 @@
 		
 			<item>
 				<title>[Network] 06. HTTP 服務</title>
+				<description>&lt;h2 id=&quot;test&quot;&gt;test&lt;/h2&gt;
+</description>
+				<pubDate>Mon, 22 Oct 2018 19:08:08 +0800</pubDate>
+				<link>/network/2018/10/22/test.html</link>
+				<guid isPermaLink="true">/network/2018/10/22/test.html</guid>
+			</item>
+		
+			<item>
+				<title>[Network] 06. HTTP 服務</title>
 				<description>&lt;h2 id=&quot;創建http服務&quot;&gt;創建HTTP服務&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -1329,143 +1338,6 @@ Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 				<pubDate>Wed, 17 Oct 2018 00:00:00 +0800</pubDate>
 				<link>/network/2018/10/17/Network-02.-HTTP-Status-Code.html</link>
 				<guid isPermaLink="true">/network/2018/10/17/Network-02.-HTTP-Status-Code.html</guid>
-			</item>
-		
-			<item>
-				<title>[MVC教學] 05. HTTP GET/POST</title>
-				<description>&lt;h2 id=&quot;第一個-web-api&quot;&gt;第一個 Web API&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;VS&amp;gt;檔案&amp;gt;新增&amp;gt;專案&amp;gt;Visual C#&amp;gt;Web&amp;gt;ASP.NET Web 應用程式&amp;gt;Web API&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
- 
-namespace MvcHelloWebAPI.Controllers
-{
-    public class ValuesController : ApiController
-    {
-        // GET /api/values
-        public IEnumerable&amp;lt;string&amp;gt; Get()
-        {
-            return new string[] { &quot;value1&quot;, &quot;value2&quot; };
-        }
- 
-        // GET /api/values/5
-        public string Get(int id)
-        {
-            return &quot;value&quot;;
-        }
- 
-        // POST /api/values
-        public void Post(string value)
-        {
-        }
- 
-        // PUT /api/values/5
-        public void Put(int id, string value)
-        {
-        }
- 
-        // DELETE /api/values/5
-        public void Delete(int id)
-        {
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;用-actionresult-來-getpost&quot;&gt;用 ActionResult 來 GET/POST&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[HttpPost]，是一個可選屬性，讓 MVC 知道我們是要用 Post 接收，這限制了調用，所以它只能通過 HTTP POST 請求，[HttpGet] 亦同&lt;/li&gt;
-  &lt;li&gt;不能在同一個路由同時用 [HttpGet] 和 [HttpPost]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;httpget&quot;&gt;HttpGet&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HttpGet] // httq://server/home/create, 新增資料用
-public ActionResult Create()        
-{
-  //預設會對映到/Views/Home/Create.cshtml
-  return View();
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;httppost&quot;&gt;HttpPost&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HttpPost] // httq://server/home/create 送出表單時          
-public ActionResult Create(PlayerModel player)
-{
-  //前方送來的資料會自動對應到 Player 上
-  if (ModelState.IsValid) player.Save();
-  //轉到httq://server/home/index
-  return RedirectToAction(&quot;Index&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Post Form&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HttpPost]
-public ActionResult Transcripts(FormCollection post)
-{
-	string id = post[&quot;id&quot;];
-	string name = post[&quot;name&quot;];
-	int score = Convert.ToInt32(post[&quot;score&quot;]);
-	Student data = new Student(id, name, score);
-	return View(data);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Post string&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HttpPost]
-public ActionResult PostData(string Value1, string Value2)
-{
-  ViewData[&quot;Result&quot;] = Convert.ToInt32(Value1) + Convert.ToInt32(Value2);
-  return View();
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DB 操作&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HttpPost]
-public ActionResult Create(Models.Daily postback)  // --Create POST--
-{
-  using (Models.MymoneyEntities db = new Models.MymoneyEntities())
-  {
-    db.Mymoney.Add(postback);  //將回傳資料postback,加入至Mymoney DB
-    TempData[&quot;ResultMessage&quot;] = String.Format(&quot;紀錄[{0}]成功建立&quot;, postback.Item);  //設定成功訊息
-    db.SaveChanges();  //儲存資料
-   }
-   return RedirectToAction(&quot;Index&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;ref&quot;&gt;ref&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;https://blog.darkthread.net/blog/asp-net-mvc3-intro-4/&lt;/li&gt;
-  &lt;li&gt;https://ithelp.ithome.com.tw/articles/10192537&lt;/li&gt;
-  &lt;li&gt;https://dotblogs.com.tw/regionbbs/2012/01/09/mvc_and_http_post&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-				<pubDate>Wed, 17 Oct 2018 00:00:00 +0800</pubDate>
-				<link>/mvc%E6%95%99%E5%AD%B8/2018/10/17/MVC%E6%95%99%E5%AD%B8-05.-HTTP-GET-POST.html</link>
-				<guid isPermaLink="true">/mvc%E6%95%99%E5%AD%B8/2018/10/17/MVC%E6%95%99%E5%AD%B8-05.-HTTP-GET-POST.html</guid>
 			</item>
 		
 	</channel>

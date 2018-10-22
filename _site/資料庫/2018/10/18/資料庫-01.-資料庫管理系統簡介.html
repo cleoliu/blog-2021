@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>[資料庫] 03. 資料庫設計</title>
+	<title>[資料庫] 01. 資料庫管理系統簡介</title>
 	
-	<meta name="description" content="資料表規劃，提出所需要的資料...">
+	<meta name="description" content="原始資料（Raw Data）：將資料有系統和結構化的紀錄...">
 	
 	<meta name="author" content="Cleo">
 
@@ -59,7 +59,7 @@
 				<img src="/assets/img/pexels-photo-1449638.jpeg" width="150" height="150" class="img-circle" />
 			</a>
 			<a class="navbar-brand" href="//aboutme.html" style="color: white;text-transform: uppercase;">
-				[資料庫] 03. 資料庫設計
+				[資料庫] 01. 資料庫管理系統簡介
 			</a>
 
 		</div>
@@ -147,7 +147,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>[資料庫] 03. 資料庫設計 </h1>
+  <h1>[資料庫] 01. 資料庫管理系統簡介 </h1>
 </div>
 	
 <article>
@@ -156,151 +156,31 @@
 	 <span class="post-date">
 	   
 	   October 
-	   21st,
-	     
+	   18th,
+	   
 		 2018
 		 <span id="busuanzi_container_page_pv" style="display: inline;">
 				| Viewd <span id="busuanzi_value_page_pv">10</span> times.
 			</span>
 	 </span>
 	  <div class="article_body">
-	  <h2 id="一些名詞">一些名詞</h2>
+	  <h2 id="特點">特點</h2>
+
 <ul>
-  <li>欄位 <strong>空值</strong> 表示：
+  <li>原始資料（Raw Data）：將資料有系統和結構化的紀錄</li>
+  <li>降低資料重複性及不一致性：
     <ul>
-      <li>不適用（如女學生無兵役）。</li>
-      <li>未知（如學校資料中沒有學生的手機）。</li>
+      <li>將所有資料集3e中在<strong>特定伺服器</strong>中，可避免資料在<strong>不同主機</strong>，資料異步狀況</li>
+      <li>若資料在<strong>不同資料庫</strong>中，資料庫管理系統彼此可透過<strong>協調者</strong>達到分散式處理</li>
     </ul>
   </li>
-  <li><strong>view</strong>：來自Table，可能合併多個Table。</li>
-  <li>關連模行中：
+  <li>並行控制（Concurrency Control）：解決<strong>多人存取</strong>的情況下資料錯誤的狀況</li>
+  <li>資料永久性：資料備份／資料故障後還原／資料複寫</li>
+  <li>存取控制：身分認證／授權能供職責劃分</li>
+  <li>自我描述性：
     <ul>
-      <li>Table：也稱關連、實體（Entity）。</li>
-      <li>縱：欄位（Field）、屬性（Attribute）。</li>
-      <li>橫：紀錄、值組（Tuple）。</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /><br /></p>
-
-<hr />
-
-<h2 id="關連式資料庫設計">關連式資料庫設計</h2>
-<ol>
-  <li>鍵值完整性限制（key Integrity Constraint）：Key 不可為 Null Value。</li>
-  <li>領域完整性限制（Domain Integrity Constraint）：屬性值規範。（如｛男, 女｝）</li>
-  <li>實體完整性限制（Entity Integrity Constraint）：Key 不可重複。</li>
-  <li>參考完整性限制：
-    <ul>
-      <li>被參考：父關聯，<strong>主鍵 Primary Key</strong>。</li>
-      <li>參考父關聯：<strong>子關連，Foreign Key</strong>。</li>
-    </ul>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<hr />
-
-<h2 id="正規化">正規化</h2>
-
-<blockquote>
-  <p>正規化（Normalization）是關聯式資料庫在設計資料表時，用來消除資料儲存異常的處理方法。</p>
-</blockquote>
-
-<ul>
-  <li>不允許多重值屬性。</li>
-  <li>去除部分相依性。</li>
-  <li>去除間接相依性。</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h3 id="1-第一階正規化-first-normal-form-1nf">1. 第一階正規化 (First Normal Form, 1NF)</h3>
-
-<ul>
-  <li>一格(每一列每一欄)只能有一筆資料。</li>
-  <li>每筆資料都有一個唯一的主鍵作為識別。</li>
-</ul>
-
-<p>如：</p>
-
-<p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-43.jpg" alt="" />
-​</p>
-<ol>
-  <li>
-    <p>將紀錄拆開</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-40-54.jpg" alt="" />
-​</p>
-  </li>
-  <li>
-    <p>上表有兩個＂王小明＂，必須加上主鍵來做識別。</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-10-09.jpg" alt="" />
-​
-<br /><br /></p>
-  </li>
-</ol>
-
-<h3 id="2-第二階正規化-second-normal-form-2nf">2. 第二階正規化 (Second Normal Form, 2NF)</h3>
-
-<ul>
-  <li>符合1NF。</li>
-  <li>所有非主鍵欄位都和主鍵欄位具有相依性。</li>
-</ul>
-
-<p>如：</p>
-
-<p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-41-55.jpg" alt="" />
-​</p>
-<ol>
-  <li>
-    <p>在一張交易單中，主鍵 <strong>交易Id</strong>，跟<strong>(交易)日期</strong>、<strong>(交易)商品</strong>，都很明確有意義上的關聯，但加上去的 <strong>客人Id</strong>，跟這些欄位就不能說有直接的關聯了。為了符合2NF的規範，將帳本拆成了2張表。
-​
- <img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-17%20%E4%B8%8A%E5%8D%88%2011-42-25.jpg" alt="" /></p>
-  </li>
-  <li>
-    <p>這邊交易表中的 <strong>客人Id</strong> 已經變成外鍵了。</p>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<h3 id="3-第三階正規化-third-normal-form-3nf">3. 第三階正規化 (Third Normal Form, 3NF)</h3>
-
-<ul>
-  <li>符合 1NF 及 2NF。</li>
-  <li>非主鍵欄位彼此都具有相依性。</li>
-</ul>
-
-<p>如：</p>
-
-<ol>
-  <li>
-    <p>如 <strong>商品明細</strong> 和 <strong>付款方式</strong>，是無法互相決定對方內容的，也就是互不相依的，阿嬤發現這樣並不符合 3NF 規範，決定再怒拆。</p>
-
-    <p><img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-15-13.jpg" alt="" />
-​</p>
-  </li>
-  <li>
-    <p>拆完之後發現交易表剩下一堆外鍵。</p>
-
-    <p>​<img src="https://s3.amazonaws.com/notejoy/note_images/147281.1.2018-10-22%20%E4%B8%8A%E5%8D%88%2011-16-02.jpg" alt="" /></p>
-  </li>
-</ol>
-
-<p><br /><br /></p>
-
-<ul>
-  <li>還有其他正規化方式，以下不常用，稍微了解即可：
-    <ul>
-      <li>BC正規化 (Boyce–Codd Normal Form, BCNF)</li>
-      <li>第四階正規化 (Fourth Normal Form, 4NF)</li>
-      <li>第五階正規化 (Fifth Normal Form, 5NF)</li>
-      <li>第六階正規化 (Sixth Normal Form, 6NF)</li>
-      <li>DK正規化 (Domain/Key Normal Form, DKNF)</li>
+      <li>儲存資料 + 描述資料的資料－<strong>meta-data</strong></li>
+      <li>描述資料的資料 的集合－<strong>系統目錄</strong>（System Catalog，或稱資料字典 Data Dictionary）</li>
     </ul>
   </li>
 </ul>
@@ -309,20 +189,84 @@
 
 <hr />
 
-<h2 id="資料庫設計">資料庫設計</h2>
+<h2 id="資料庫的組成">資料庫的組成</h2>
 
 <ul>
-  <li>由大而小：實體＞屬性＞實體間關連</li>
-  <li>由小而大：屬性收集＞分類成不同實體＞實體間關連＞資料流程圖</li>
+  <li>資料庫 = 檔案系統（位元＞位元組＞字元＞欄位＞紀錄＞檔案）+ 系統目錄 + Indexes</li>
 </ul>
 
-<p><br /><br /></p>
+<h2 id="meta-data">Meta-Data</h2>
 
-<hr />
-
-<h2 id="ref">ref：</h2>
 <ul>
-  <li><a href="http://soon.logdown.com/posts/685164-sql-normalization">資料庫正規化</a></li>
+  <li>資料的說明資料，以及對資料的限制</li>
+  <li>描述：
+    <ul>
+      <li>欄位名稱</li>
+      <li>資料型態</li>
+      <li>資料長度</li>
+      <li>資料範圍</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="indexes">Indexes</h2>
+<ul>
+  <li>某一個或多個欄位組成，事先經過排序，提高查詢效率</li>
+</ul>
+
+<h2 id="資料庫系統與應用架構">資料庫系統與應用架構</h2>
+
+<ul>
+  <li>展現邏輯層：使用者介面（view）</li>
+  <li>商業邏輯層：將使用者輸入 或 資料庫中所查詢的資料經過程式將資料彙整，在傳至邏輯層（Controller）</li>
+  <li>資料存取邏輯層：後端資料庫進行存取的動作－SQL（結構化查詢語言）</li>
+  <li>資料邏輯層：資料儲存／資料管理－資料庫（Database）</li>
+</ul>
+
+<h2 id="三層式架構3-tier">三層式架構（3-tier）</h2>
+
+<ul>
+  <li>適用於網路程式，在語法崁入SQL語法</li>
+  <li>從商業邏及獨立出來位於另一部伺服器中－應用伺服器</li>
+</ul>
+
+<h2 id="中介軟體">中介軟體</h2>
+<ul>
+  <li>解決開發者在不同作業系統/不同的實體網路/網路協定/資料庫系統的問題</li>
+  <li>資料存取層分割出來的中介層</li>
+  <li>使用者使用共同語言（SQL）＞中介軟體的共同介面＞資料庫管理系統</li>
+</ul>
+
+<h2 id="odbc-資料庫存取標準">ODBC 資料庫存取標準</h2>
+<ul>
+  <li>應用程式 與 資料管理系統 之間的共同介面驅動程式</li>
+  <li>驅動程式 將 命令 轉成 資料庫管理系統能理解的命令</li>
+</ul>
+
+<h2 id="三層綱要架構">三層綱要架構</h2>
+<ul>
+  <li>內部綱要（作業系統）
+    <ul>
+      <li>描述資料庫儲存資料的結構，及儲存方式，如資料儲存方式／實際位置</li>
+      <li>建立索引</li>
+      <li>使用者對面對的是一個資料庫，但此資料庫其實由多個磁碟組成</li>
+    </ul>
+  </li>
+  <li>概念綱要
+    <ul>
+      <li>資料庫管理系統掌控</li>
+      <li>描述資料表間的關聯性</li>
+      <li>儲存資料表和綱要</li>
+      <li>綱要－使用者共用的資料結構</li>
+    </ul>
+  </li>
+  <li>外部視界（使用者）
+    <ul>
+      <li>資料庫管理系統掌控</li>
+      <li>針對不同使用者需要的資料進行篩選，可避免使用者看到未經授權的資料</li>
+      <li>使用視界定義語言（VDL）</li>
+    </ul>
+  </li>
 </ul>
 
 	  </div>
@@ -395,10 +339,10 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/network/2018/10/21/Network-05.-Cache-&-Redis.html" title="[Network] 05. Cache & Redis">&larr; Previous</a></li>
+		  <li class="previous"><a href="/network/2018/10/18/Network-03.-Web-API.html" title="[Network] 03. Web API">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/network/2018/10/22/Network-06.-HTTP-%E6%9C%8D%E5%8B%99.html" title="[Network] 06. HTTP 服務">Next &rarr;</a></li>
+		  <li class="next"><a href="/network/2018/10/19/Network-04.-Cookie-&-Session.html" title="[Network] 04. Cookie & Session">Next &rarr;</a></li>
 		  
 		</ul>
 
