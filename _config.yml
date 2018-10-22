@@ -3,9 +3,9 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
-disqus: cleo
-google_analytics: cleo
-title: cleo
+disqus: Cleo
+google_analytics: Cleo
+title: Cleo
 
 defaults:
   -
@@ -16,7 +16,7 @@ defaults:
 
 description: Stylish Jekyll Theme
 author:
-  name: cleo
+  name: Cleo
   email: second934@gmail.com
   github: cleoliu
   twitter: 
@@ -25,6 +25,7 @@ author:
   bio: Writing and Learning!
   email_md5: pexels-photo-1449638.jpeg
   profile_photo: IMG_6726.jpg
+  sidebar_background: bg.jpg
 
 
 rss_path: feed.xml
