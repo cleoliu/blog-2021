@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>[MVC教學] 05. HTTP GET/POST</title>
+	
+	<meta name="description" content="第一個 Web API...">
+	
+	<meta name="author" content="Cleo">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/assets/ico/favicon.png">
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header" style="background-image: url(/assets/img/bg.jpg); background-size: cover; background-position: center;
+		">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/cleoliu">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:second934@gmail.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="/">
+				<img src="/assets/img/pexels-photo-1449638.jpeg" width="150" height="150" class="img-circle" />
+			</a>
+			<a class="navbar-brand" href="//aboutme.html" style="color: white;text-transform: uppercase;">
+				[MVC教學] 05. HTTP GET/POST
+			</a>
+
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/history.html">History</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/history.html"><i class="fa fa-clock-o"></i>History</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="/assets/img/pexels-photo-1449638.jpeg" width="150" height="150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/aboutme.html">Cleo</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Writing and Learning!
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/cleoliu">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:second934@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/cleo-l-770422130">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>[MVC教學] 05. HTTP GET/POST </h1>
+</div>
+	
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   October 
+	   17th,
+	   
+		 2018
+		 <span id="busuanzi_container_page_pv" style="display: inline;">
+				| Viewd <span id="busuanzi_value_page_pv">10</span> times.
+			</span>
+	 </span>
+	  <div class="article_body">
+	  <h2 id="第一個-web-api">第一個 Web API</h2>
+
+<blockquote>
+  <p>VS&gt;檔案&gt;新增&gt;專案&gt;Visual C#&gt;Web&gt;ASP.NET Web 應用程式&gt;Web API</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Web.Http;
+ 
+namespace MvcHelloWebAPI.Controllers
+{
+    public class ValuesController : ApiController
+    {
+        // GET /api/values
+        public IEnumerable&lt;string&gt; Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+ 
+        // GET /api/values/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+ 
+        // POST /api/values
+        public void Post(string value)
+        {
+        }
+ 
+        // PUT /api/values/5
+        public void Put(int id, string value)
+        {
+        }
+ 
+        // DELETE /api/values/5
+        public void Delete(int id)
+        {
+        }
+    }
+}
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="用-actionresult-來-getpost">用 ActionResult 來 GET/POST</h2>
+
+<ul>
+  <li>[HttpPost]，是一個可選屬性，讓 MVC 知道我們是要用 Post 接收，這限制了調用，所以它只能通過 HTTP POST 請求，[HttpGet] 亦同</li>
+  <li>不能在同一個路由同時用 [HttpGet] 和 [HttpPost]</li>
+</ul>
+
+<h3 id="httpget">HttpGet</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HttpGet] // httq://server/home/create, 新增資料用
+public ActionResult Create()        
+{
+  //預設會對映到/Views/Home/Create.cshtml
+  return View();
+}
+</code></pre></div></div>
+
+<h3 id="httppost">HttpPost</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HttpPost] // httq://server/home/create 送出表單時          
+public ActionResult Create(PlayerModel player)
+{
+  //前方送來的資料會自動對應到 Player 上
+  if (ModelState.IsValid) player.Save();
+  //轉到httq://server/home/index
+  return RedirectToAction("Index");
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Post Form</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HttpPost]
+public ActionResult Transcripts(FormCollection post)
+{
+	string id = post["id"];
+	string name = post["name"];
+	int score = Convert.ToInt32(post["score"]);
+	Student data = new Student(id, name, score);
+	return View(data);
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Post string</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HttpPost]
+public ActionResult PostData(string Value1, string Value2)
+{
+  ViewData["Result"] = Convert.ToInt32(Value1) + Convert.ToInt32(Value2);
+  return View();
+}
+</code></pre></div></div>
+
+<ul>
+  <li>DB 操作</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HttpPost]
+public ActionResult Create(Models.Daily postback)  // --Create POST--
+{
+  using (Models.MymoneyEntities db = new Models.MymoneyEntities())
+  {
+    db.Mymoney.Add(postback);  //將回傳資料postback,加入至Mymoney DB
+    TempData["ResultMessage"] = String.Format("紀錄[{0}]成功建立", postback.Item);  //設定成功訊息
+    db.SaveChanges();  //儲存資料
+   }
+   return RedirectToAction("Index");
+}
+</code></pre></div></div>
+
+<hr />
+<h2 id="ref">ref</h2>
+<ul>
+  <li>https://blog.darkthread.net/blog/asp-net-mvc3-intro-4/</li>
+  <li>https://ithelp.ithome.com.tw/articles/10192537</li>
+  <li>https://dotblogs.com.tw/regionbbs/2012/01/09/mvc_and_http_post</li>
+</ul>
+
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#MVC教學-ref">
+					MVC教學 <span>(5)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#實做-ref">
+					實做 <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#ASP•NET-ref">
+					ASP•NET <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#C＃-ref">
+					C＃ <span>(5)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#HTTP-ref">
+					HTTP <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="https://raw.githubusercontent.com/cleoliu/cleoliu.github.io/master/assets/img/pexels-photo-1449638.jpeg" width="150" height="150" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Cleo</h4>
+        <p class="author-bio">Writing and Learning!</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/network/2018/10/16/Network-01.-Http-%E5%8D%94%E5%AE%9A.html" title="[Network] 01. Http 協定">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/network/2018/10/17/Network-02.-HTTP-Status-Code.html" title="[Network] 02. HTTP Status Code">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2018 Cleo with <a href="http://jekyllrb.com/">Jekyll</a>.
+				<span id="busuanzi_container_site_uv">You are the <span id="busuanzi_value_site_uv"></span>th visitor.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'Cleo', 'auto');
+  ga('send', 'pageview');
+</script>
+
