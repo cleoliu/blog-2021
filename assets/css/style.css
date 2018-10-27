@@ -2,7 +2,8 @@
 
 body{
 	color: #2c3e50;
-	font-family: Microsoft JhengHei;
+	font-family: "Source Sans Pro", Microsoft JhengHei;
+	background: #F4F4F4;
 }
 
 .sidebar {
@@ -41,10 +42,12 @@ a.nav-link i{
 a.nav-link:hover { color: #777; }
 
 #bio {
-	font-family: "Courier New", Courier, monospace;
 	font-size: 11px;
 	margin: 0 auto;
 	margin-bottom: 10px;
+	font-family: URW Chancery L, cursive; /*字體*/
+    font-style: italic; /*斜體*/
+
 }
 
 #contact-list li .fa,
@@ -57,20 +60,24 @@ article .share .btn {
 }
 #contact-list li:hover .fa-twitter,
 article .share .twitter:hover {
-	color: #00ACEE;
-	border-color: #00ACEE;
+	color: #1D87BD;
+	border-color: #1D87BD;
 }
+#contact-list li:hover .fa-github-alt {
+	color: #1D87BD;
+}
+
 #contact-list li:hover .fa-linkedin {
 	color: #1D87BD;
 }
 #contact-list li:hover .fa-envelope {
-	color: #E93E30;
+	color: #1D87BD;
 }
 #contact-list li:hover .fa-pinterest {
-	color: #CC2127;
+	color: #1D87BD;
 }
 #contact-list li:hover .fa-rss {
-	color: #e74c3c;
+	color: #1D87BD;
 }
 article .share .facebook:hover {
 	color: #43609C;
@@ -87,6 +94,9 @@ article .share .gplus:hover {
 
 .page-header {
 	color: #135bae;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+	text-align: center;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
 
@@ -105,12 +115,31 @@ article{
 	margin-bottom: 20px;
 }
 
+article.home {
+	color: #2c3e50b0; /*文章內文研色*/
+    border: solid 1px rgba(160, 160, 160, 0.3);
+    background-color: #FFFFFF;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 .post-date {
 	text-transform: capitalize;
 	font-size: 13px;
 	letter-spacing: 2px;
 	font-weight: bold;
+	border-bottom: 1px dotted;
 }
+
+article.clearfix{
+	padding-top: 20px;
+	border: solid 1px rgba(160, 160, 160, 0.3);
+	background-color: #FFFFFF;
+	word-break: break-all;
+}
+/*<article class="clearfix"></article>*/
 
 article {
 	padding: 0 5% 0;
@@ -136,13 +165,14 @@ article.home h1 a,
 article.home h2 a,
 article.home h3 a,
 article.home h4 a {
-	color: #f2756a;
+	color: #3c3b3b;
+	letter-spacing: 0.1em;
 }
 article.home h1 a:hover,
 article.home h2 a:hover,
 article.home h3 a:hover,
 article.home h4 a:hover {
-	color: #e74c3c;
+	color: #76CBB2;
 }
 
 .author .author-image {
