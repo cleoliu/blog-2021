@@ -22,8 +22,8 @@ $ pip install itchat
 
 ***
 
-##入門實例 [1](https://itchat.readthedocs.io/zh/latest/)
-- 發一條信息：robot **主動** 發送訊息
+## 入門實例 [1](https://itchat.readthedocs.io/zh/latest/)
+- 發一條信息：robot `主動` 發送訊息
 
     ```python
     import itchat
@@ -32,9 +32,9 @@ $ pip install itchat
     itchat.send('Hello, filehelper', toUserName='filehelper')
     ```
 
-- 回覆訊息：robot **被動**，收到對方傳來的訊息才做回覆
+- 回覆訊息：robot `被動`，收到對方傳來的訊息才做回覆
 
-    ```
+    ```python
     import itchat
 
     @itchat.msg_register(itchat.content.TEXT) #回覆的裝飾器
@@ -53,13 +53,13 @@ $ pip install itchat
 
 - **登入**
 
-    ```
+    ```python
     itchat.auto_login()
     ```
 
 - 命令行顯示 **QRcode**
 
-    ```
+    ```python
     itchat.auto_login(enableCmdQR=True)
     # 如部分的linux系統，塊字符的寬度為一個字符（正常應為兩字符），故賦值為2
     itchat.auto_login(enableCmdQR=2) 
@@ -67,15 +67,15 @@ $ pip install itchat
     itchat.auto_login(enableCmdQR=-1)
     ```
 
-- 退出程序後 **暫存登陸狀態**：通過如下命令登陸，即使程序關閉，一定時間內重新開啟也可以不用重新掃碼，該方法會生成一個靜態文件itchat.pkl，用於存儲登陸的狀態。
+- 退出程序後 **暫存登陸狀態**：通過如下命令登陸，即使程序關閉，一定時間內重新開啟也可以不用重新掃碼，該方法會生成一個靜態文件 _itchat.pkl_，用於存儲登陸的狀態。
     
-    ```
+    ```python
     itchat.auto_login(hotReload=True)
     ```
 
 - **登出**
 
-    ```
+    ```python
     itchat.logout()
     ```
 
@@ -89,7 +89,7 @@ $ pip install itchat
 
 - `send`：大部分類型都可以用這個方法
 
-    ```
+    ```python
     # 發送訊息
     itchat.send(msg='Text Message', toUserName=None) #toUserName為空則發送給自己
 
@@ -101,28 +101,28 @@ $ pip install itchat
 
 - `send_msg`
 
-    ```
+    ```python
     itchat.send_msg(msg='Text Message', toUserName=None)
     itchat.send_msg('Hello world')
     ```
 
 - `send_file`
 
-    ```
+    ```python
     itchat.send_file(fileDir, toUserName=None)
     itchat.send_file('xlsx.xlsx')
     ```
 
 - `send_img`
 
-    ```
+    ```python
     itchat.send_img(fileDir, toUserName=None)
     itchat.send_img('gz.gif')
     ```
 
 - `send_video`
 
-    ```
+    ```python
     itchat.send_video(fileDir, toUserName=None)
     itchat.send_file('demo.mp4')
     ```
