@@ -6,7 +6,7 @@ tags: [Python, itchat, Robot]
 description: 實現微信個人號聊天機器人通過自定義消息處理方法加入聊天功能...
 ---
 
-> itchat 可以實現一個聊天機器人的 server，可以主動發送訊息及文件，也可以做為回覆機器人，登入方式是透過 wechat 網頁版，掃 QRcode 登入（現在為了避免濫用，wechat 官方網頁版有限制新用戶不可使用，所以請準備一個有在使用的 wechat 帳號），在啟動之後 server 會持續接聽，在後面接的功能（如 api）失敗了也不會中斷 server，可以串接的功能像是 圖靈回覆、翻譯api、自動報時、爬蟲程式等等，這篇就先說明 itchat 的基本用法
+> itchat 可以實現一個聊天機器人的 server，可以主動發送訊息及文件，也可以做為回覆機器人，登入方式是透過 wechat 網頁版，掃 QRcode 登入（現在為了避免濫用，wechat 官方網頁版有限制新用戶不可使用，所以請準備一個有在使用的 wechat 帳號），在啟動之後 server 會持續接聽，在後面接的功能（如 api）失敗了也不會中斷 server，可以串接的功能像是 圖靈回覆、翻譯 api、自動報時、爬蟲程式等等，這篇就先說明 itchat 的基本用法
 
 <br>
 
@@ -51,13 +51,13 @@ $ pip install itchat
 
 ## 登入/登出 [1](https://itchat.readthedocs.io/zh/latest/intro/login/)
 
-- **登入**
+- **登入**：在運行下面程式後會彈出 QRcode 的圖片檔，需掃碼登入
 
     ```python
     itchat.auto_login()
     ```
 
-- 命令行顯示 **QRcode**
+- 如果像是要運行在 linux Server，可用命令行顯示 **QRcode**
 
     ```python
     itchat.auto_login(enableCmdQR=True)
@@ -139,7 +139,7 @@ $ pip install itchat
 
 - 使用 `search_friends` 方法可以搜尋用戶
 
-    ```
+    ```python
     # 獲取自己的用戶信息，返回自己的屬性字典
     itchat.search_friends()
     # 獲取特定UserName的用戶信息
@@ -154,7 +154,7 @@ $ pip install itchat
 
 - 更新用戶信息
 
-    ```
+    ```python
     memberList = itchat.update_friend('@abcdefg1234567')
     ```
 
@@ -162,7 +162,7 @@ $ pip install itchat
 
 ### 公眾號
 
-```
+```python
 # 獲取特定UserName的公眾號，返回值為一個字典
 itchat.search_mps(userName='@abcdefg1234567')
 # 獲取名字中含有特定字符的公眾號，返回值為一個字典的列表
@@ -177,7 +177,7 @@ itchat.search_mps(userName='@abcdefg1234567', name='LittleCoder')
 
 - **群聊列表**
 
-    ```
+    ```python
     # 取特定UserName的群聊，返回值為一個字典
     itchat.search_chatrooms(userName='@@abcdefg1234567')
     # 獲取名字中含有特定字符的群聊，返回值為一個字典的列表
@@ -190,7 +190,7 @@ itchat.search_mps(userName='@abcdefg1234567', name='LittleCoder')
     - 群聊在首次獲取中不會獲取群聊的用戶列表，所以需要調用該命令才能獲取群聊的成員
     - 鍵為 True 將可以更新群聊列表並返回通訊錄中保存的群聊列表
 
-    ```
+    ```python
     memberList = itchat.update_chatroom('@@abcdefg1234567', detailedMember=True)
     ```
 
@@ -198,7 +198,7 @@ itchat.search_mps(userName='@abcdefg1234567', name='LittleCoder')
     - 超過 40 人的群聊無法使用直接加入的加入方式
     - 刪除群聊需要本賬號為群管理員
 
-    ```
+    ```python
     memberList = itchat.get_friends()[1:]
     # 創建群聊，topic鍵值為群聊名
     chatroomUserName = itchat.create_chatroom(memberList, 'test chatroom')
@@ -215,3 +215,5 @@ itchat.search_mps(userName='@abcdefg1234567', name='LittleCoder')
 ## ref
 
 - [itchat](https://itchat.readthedocs.io/zh/latest/)
+
+<br><br>
