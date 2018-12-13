@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Python聊天機器人] 01-01. Wechat Robot-itchat"
+title: "[Python ChatRobot] 01. Wechat Robot-itchat"
 categories: [Python]
 tags: [Python, itchat, Robot]
 description: 實現微信個人號聊天機器人通過自定義消息處理方法加入聊天功能...
