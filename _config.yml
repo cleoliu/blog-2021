@@ -17,7 +17,7 @@ defaults:
 description: Stylish Jekyll Theme
 author:
   name: Cleo
-  email: second934@gmail.com
+  email: cleoliu.tw@gmail.com
   github: cleoliu
   twitter: 
   pinterest: 
@@ -32,7 +32,7 @@ rss_path: feed.xml
 history_path: history.html
 categories_path: categories.html
 tags_path: tags.html
-aboutme_path: aboutme.html
+aboutme_path: https://cleoliu.herokuapp.com/
 
 BASE_PATH:
 
