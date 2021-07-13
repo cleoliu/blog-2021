@@ -4,10 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Sleek is a modern Jekyll theme focused on speed performance & SEO best practices. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/) or simply read the guide on how to [get started](/getting-started)
+你好，我是一名專注於網站、網路服務和網路 API 的網路軟體工程師。
 
-You can find the source code for the Jekyll new theme at:
-[sleek](https://github.com/janczizikow/sleek)
-
-You can find the source code for Jekyll at
-[jekyll](https://github.com/jekyll/jekyll)
+我開發關於商業領域或學術領域的軟體和系統。 我的工程師工作經驗不算是很豐富，但是我努力嘗試在新的工作環境中學習任何有關軟體概念或資料庫概念的知識。 我希望我可以持續精進自己的能力，成為優秀的軟體開發人員。
