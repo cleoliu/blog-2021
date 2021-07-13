@@ -3,7 +3,6 @@ layout: post
 title: "[Python ChatRobot] 02. 部屬 Wechat Robot 到 GCP"
 categories: [ChatRobot]
 tags: [Python, itchat, Robot, GCP]
-description: 部屬程式到 GCP，讓 Chat Robot 可以持續運作 ...
 featured-img: emile-perron-190221
 ---
 

@@ -3,7 +3,6 @@ layout: post
 title: "[Python ChatRobot] 01. Wechat Robot-itchat"
 categories: [ChatRobot]
 tags: [Python, itchat, Robot]
-description: 實現微信個人號聊天機器人通過自定義消息處理方法加入聊天功能...
 featured-img: emile-perron-190221
 ---
 
