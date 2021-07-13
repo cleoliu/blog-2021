@@ -4,6 +4,7 @@ title: "[Python ChatRobot] 02. 部屬 Wechat Robot 到 GCP"
 categories: [ChatRobot]
 tags: [Python, itchat, Robot, GCP]
 description: 部屬程式到 GCP，讓 Chat Robot 可以持續運作 ...
+featured-img: emile-perron-190221
 ---
 
 - 首先先到 google 申請 GCP 服務吧，目前（2018）提供新加入成員一年 & 300 美元的試用額度。

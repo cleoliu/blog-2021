@@ -4,6 +4,7 @@ title: "[Python ChatRobot] 01. Wechat Robot-itchat"
 categories: [ChatRobot]
 tags: [Python, itchat, Robot]
 description: 實現微信個人號聊天機器人通過自定義消息處理方法加入聊天功能...
+featured-img: emile-perron-190221
 ---
 
 > itchat 可以實現一個聊天機器人的 server，可以主動發送訊息及文件，也可以做為回覆機器人，登入方式是透過 wechat 網頁版，掃 QRcode 登入（現在為了避免濫用，wechat 官方網頁版有限制新用戶不可使用，所以請準備一個有在使用的 wechat 帳號），在啟動之後 server 會持續接聽，在後面接的功能（如 api）失敗了也不會中斷 server，可以串接的功能像是 圖靈回覆、翻譯 api、自動報時、爬蟲程式等等，這篇就先說明 itchat 的基本用法
