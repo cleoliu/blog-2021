@@ -1,0 +1,40 @@
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+disqus: Cleo
+google_analytics: Cleo
+title: Cleo
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: Cleo Engineer Notes
+
+description: Stylish Jekyll Theme
+author:
+  name: Cleo
+  email: cleoliu.tw@gmail.com
+  github: cleoliu
+  twitter: 
+  pinterest: 
+  linkedin: cleo-l-770422130
+  bio: Writing and Learning!
+  email_md5: pexels-photo-1449638.jpeg
+  profile_photo: IMG_6726.jpg
+  sidebar_background: bg.jpg
+
+
+rss_path: feed.xml
+history_path: history.html
+categories_path: categories.html
+tags_path: tags.html
+aboutme_path: https://cleoliu.herokuapp.com/
+
+BASE_PATH:
+
+plugins:
+  - jekyll-paginate
