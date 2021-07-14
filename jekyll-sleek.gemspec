@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-sleek"
+  spec.name          = "Cleo"
   spec.version       = "0.1.9"
   spec.authors       = ["Cleo"]
   spec.email         = ["cleoliu.tw@gmail.com"]
